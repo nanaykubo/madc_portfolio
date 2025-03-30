@@ -51,7 +51,7 @@ body {
 }
 
 .connect_img {
-  width: 100%;
+  width: 80%;
   cursor: url("s_cursor.png"), auto;
 }
 
@@ -128,7 +128,7 @@ html {
   border-radius: 15px;
   box-shadow: 0 0 0 4px #a39073, 0 0 0 8px #5d5242,
     8px 8px 0 0 rgba(0, 0, 0, 0.4);
-  padding: 30px;
+  padding: 10px !important;
   text-align: center;
   position: relative;
   outline: none;
@@ -149,8 +149,8 @@ h1 {
 
 .arrow {
   position: absolute;
-  bottom: 30px;
-  right: 20px;
+  bottom: 12px;
+  right: 12px;
   width: 50px;
   height: auto;
   cursor: url("s_cursor.png"), auto;
@@ -296,6 +296,10 @@ a {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+  .header {
+    margin-top: 0 !important; /* Remove mt-4 */
+  }
+
   .container {
     display: block;
   }
@@ -315,7 +319,7 @@ a {
   .avatar-box {
     font-family: "Press Start 2P", cursive;
     width: 160px;
-    height: 220px;
+    height: 200px;
     color: #2b2b2b;
     border: 6px solid #171410;
     border-radius: 15px;
@@ -339,6 +343,7 @@ a {
     max-width: 165px;
     margin-bottom: 15px !important;
     margin-left: 120px;
+    margin-top: 20px;
   }
 
   .pixel-button {
@@ -373,7 +378,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 2!important;
+    z-index: 2 !important;
   }
 
   .name {
@@ -392,7 +397,7 @@ a {
   .button-container {
     position: absolute;
     left: 10px;
-    top: 52%;
+    top: 54%;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -401,7 +406,7 @@ a {
 
   .bio-box {
     font-family: "Press Start 2P", cursive;
-    height: 450px;
+    height: 250px;
     background: #e9cda5;
     color: #2b2b2b;
     border: 6px solid #171410;
@@ -415,7 +420,7 @@ a {
     overflow: hidden;
     box-sizing: border-box;
     max-width: 300px;
-    max-height: 350px;
+    max-height: 250px;
     margin-top: 30px;
   }
 
@@ -434,10 +439,15 @@ a {
   }
 
   .copyright {
-    font-size: 6px;
+    font-size: 8px;
+    text-align: center;
   }
 
   .connect_img {
     width: 70%;
+  }
+
+  .arrow {
+    width: 40px;
   }
 }
