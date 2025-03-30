@@ -37,6 +37,7 @@
   transform: translateX(-50%);
   font-size: 10px;
   color: black;
+  cursor: none;
 }
 
 ::selection {
@@ -51,6 +52,7 @@ body {
 
 .connect_img {
   width: 100%;
+  cursor: url("s_cursor.png"), auto;
 }
 
 /* Page Styling */
