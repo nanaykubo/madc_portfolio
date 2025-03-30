@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MADC PORTFOLIO</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
+    <link rel="stylesheet" href="css\own_style.css" />
+  </head>
+
+  <body>
+    <!-- <div id="preloader">
+      <div class="spinner"></div>
+    </div> -->
+
+    <div id="main_content" class="container">
+      <div class="container d-flex flex-column align-items-center">
+        <div class="welcome-box text-center mb-4">
+          Welcome to my DEV Portfolio!
+        </div>
+
+        <div class="avatar-box text-center">
+          <img src="images\ME.jpg" alt="Angelica Chua" class="profile-img" />
+          <div class="name">Angelica Chua</div>
+          <div class="title">Developer</div>
+        </div>
+
+        <div class="button-container mb-5">
+          <a href="#" class="pixel-button" onclick="showBio('bio-box-1','bio')">
+            <img src="images\icons\woman.png" alt="BIO" />
+            <span>BIO</span>
+          </a>
+          <a
+            href="#"
+            class="pixel-button"
+            onclick="showBio('bio-box-2','skill')"
+          >
+            <img src="images\icons\star.png" alt="Skills" />
+            <span>SKILLS</span>
+          </a>
+          <a
+            href="#"
+            class="pixel-button"
+            onclick="showBio('bio-box-3','proj')"
+          >
+            <img src="images\icons\laptop.png" alt="Projects" />
+            <span>PROJECTS</span>
+          </a>
+          <a
+            href="#"
+            class="pixel-button"
+            onclick="showBio('bio-box-4','contact')"
+          >
+            <img src="images\icons\mail.png" alt="CONNECT" />
+            <span>CONNECT</span>
+          </a>
+        </div>
+
+        <p class="copyright">© MADC 2025 | madcportfolio.site</p>
+      </div>
+
+      <!-- Hidden Bio Boxes -->
+      <div id="bio-box-1" class="bio-box" style="display: block">
+        <h1>BIO</h1>
+
+        <div id="bio-content-1" style="display: block">
+          <p>
+            A software engineer with the keen eye of Sherlock Holmes, always
+            eager to learn and uncover the unknown.
+          </p>
+
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-2','bio')"
+          />
+        </div>
+
+        <div id="bio-content-2" style="display: none">
+          <h4>Education</h4>
+          <h6 class="fw-bold text-secondary mt-4">
+            Technological University of the Philippines
+          </h6>
+          <p class="text-muted">(TUP Manila)</p>
+          <h6>Bachelor of Science in Information System</h6>
+          <br />
+          <span class="badge-box">2015 – 2019</span>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-3','bio')"
+          />
+        </div>
+
+        <div id="bio-content-3" style="display: none">
+          <h4>OJT</h4>
+          <h6 class="fw-bold text-secondary mt-4">Payreto Services Inc</h6>
+          <h6 class="text-muted mt-4">Software Developer Intern</h6>
+          <h6></h6>
+          <br />
+          <span class="badge-box">June 2018 - Nov 2018</span>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-4','bio')"
+          />
+        </div>
+
+        <div id="bio-content-4" style="display: none">
+          <h4>Work</h4>
+          <h6 class="fw-bold text-secondary mt-4">
+            Mets Innovative Solutions Inc.
+          </h6>
+          <h6 class="text-muted mt-4">Junior Full Stack Developer</h6>
+          <h6></h6>
+          <br />
+          <span class="badge-box">June 2019 - Sept 2020</span>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-5','bio')"
+          />
+        </div>
+
+        <div id="bio-content-5" style="display: none">
+          <h4>Work</h4>
+          <h6 class="fw-bold text-secondary mt-4">
+            Electronic Transfer & Advance Processing, Inc.
+          </h6>
+          <h6 class="text-muted mt-4">Software Engineer</h6>
+          <h6></h6>
+          <br />
+          <span class="badge-box">Sept 2020 - July 2021</span>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-6','bio')"
+          />
+        </div>
+
+        <div id="bio-content-6" style="display: none">
+          <h4>Work</h4>
+          <h6 class="fw-bold text-secondary mt-4">
+            Electronic Transfer & Advance Processing, Inc.
+          </h6>
+          <h6 class="text-muted mt-4">Senior Software Engineer</h6>
+          <h6></h6>
+          <br />
+          <span class="badge-box">July 2021 - June 2024</span>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-7','bio')"
+          />
+        </div>
+
+        <div id="bio-content-7" style="display: none">
+          <h4>Work</h4>
+          <h6 class="fw-bold text-secondary mt-4">
+            Electronic Transfer & Advance Processing, Inc.
+          </h6>
+          <h6 class="text-muted mt-4">Application Development Manager</h6>
+          <h6></h6>
+          <br />
+          <span class="badge-box">June 2024 - Present</span>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('bio-content-1','bio')"
+          />
+        </div>
+      </div>
+
+      <div id="bio-box-2" class="bio-box" style="display: none">
+        <h1>SKILLS</h1>
+        <div id="skills-1">
+          <h4>Programming Language</h4>
+
+          <ul>
+            <li>C#</li>
+            <li>PHP</li>
+            <li>Java</li>
+            <li>Dart</li>
+            <li>Node JS</li>
+          </ul>
+
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('skills-2','skill')"
+          />
+        </div>
+
+        <div id="skills-2" style="display: none">
+          <h4>Framework</h4>
+
+          <ul>
+            <li>CodeIgniter</li>
+            <li>Express.js</li>
+          </ul>
+
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('skills-3','skill')"
+          />
+        </div>
+
+        <div id="skills-3" style="display: none">
+          <h4>Database</h4>
+
+          <ul>
+            <li>WAMP</li>
+            <li>XAMP</li>
+            <li>MYSQL</li>
+            <li>MSSQL</li>
+          </ul>
+
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('skills-4','skill')"
+          />
+        </div>
+
+        <div id="skills-4" style="display: none">
+          <h4>AWS Services</h4>
+
+          <ul>
+            <li>ACM</li>
+            <li>DynamoDB</li>
+            <li>EC2</li>
+            <li>ELB</li>
+            <li>Route53</li>
+            <li>S3</li>
+          </ul>
+
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('skills-5','skill')"
+          />
+        </div>
+
+        <div id="skills-5" style="display: none">
+          <h4>Tools</h4>
+
+          <ul>
+            <li>Atlassian Jira</li>
+            <li>Bitbucket</li>
+            <li>Docker</li>
+            <li>GitHub</li>
+          </ul>
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('skills-6','skill')"
+          />
+        </div>
+
+        <div id="skills-6" style="display: none">
+          <h4>Other Technical Skills</h4>
+
+          <ul>
+            <li>Bootstrap</li>
+            <li>Cordova JS</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>Linux</li>
+            <li>Flutter</li>
+            <li>WordPress</li>
+          </ul>
+
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('skills-1','skill')"
+          />
+        </div>
+      </div>
+
+      <div id="bio-box-3" class="bio-box" style="display: none">
+        <h1>PROJECTS</h1>
+        <h4>Portfolio</h4>
+        <p>To be continued ...</p>
+        <div class="arrow"></div>
+      </div>
+
+      <div id="bio-box-4" class="bio-box" style="display: none">
+        <h1>CONNECT</h1>
+        <h4>Email</h4>
+        <p>angelskieeee@gmail.com</p>
+        <h4>Contact No</h4>
+        <p>+(63) 936 478 9525</p>
+        <h4 class="mt-4">Links</h4>
+        <div class="container text-center mt-3">
+          <div class="row justify-content-center">
+            <div class="col-6 col-sm-3 d-flex justify-content-center">
+              <a
+                href="https://www.linkedin.com/in/angelica-chua-28091b242/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="images/icons/linked_in.png"
+                  alt="LinkedIn Profile"
+                  class="img-fluid connect_img"
+                />
+              </a>
+            </div>
+            <div class="col-6 col-sm-3 d-flex justify-content-center">
+              <a
+                href="https://github.com/nanaykubo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="images/icons/github.png"
+                  alt="LinkedIn Profile"
+                  class="img-fluid connect_img"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="arrow"></div>
+      </div>
+    </div>
+
+    <audio id="btnSound" src="sounds\retro_sc.wav"></audio>
+    <audio id="btnSound2" src="sounds\next_sc.wav"></audio>
+
+    <script src="bootstrap\bootstrap.min.js"></script>
+    <script src="js\jquery-3.6.0.min.js"></script>
+
+    <script src="js\script.js"></script>
+    <script src="js\loading.js"></script>
+  </body>
+</html>

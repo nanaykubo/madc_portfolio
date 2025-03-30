@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamer Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="pacman.css" />
+  </head>
+  <body>
+    
+    <!-- PRE LOADER PAGE -->
+    <div class="preloader" id="preloader">
+      <div class="row" style="margin-bottom: 50px">
+        <p class="welcome-text">MADC Portfolio</p>
+      </div>
+      <div class="row">
+        <div class="loader">
+          <div class="circles">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+          </div>
+          <div class="pacman">
+            <span class="top"></span>
+            <span class="bottom"></span>
+            <span class="left"></span>
+            <div class="eye"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p id="loading-text" class="loading-text">Loading resources</p>
+      </div>
+    </div>
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+      <h2>Gamer Portfolio</h2>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#references">References</a>
+    </div>
+
+    <div class="content" id="content">
+      <section id="about" class="section text-center">
+        <div class="container">
+          <h2>About Me</h2>
+          <p>
+            Welcome to my gaming-themed portfolio! I am passionate about game
+            development, design, and technology.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section text-center">
+        <div class="container">
+          <h2>Skills</h2>
+          <p>
+            My expertise includes game development, UI/UX design, and
+            programming.
+          </p>
+        </div>
+      </section>
+
+      <section id="resume" class="section text-center">
+        <div class="container">
+          <h2>Resume</h2>
+          <p>Download my resume <a href="#">here</a>.</p>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section text-center">
+        <div class="container">
+          <h2>Portfolio</h2>
+          <p>Check out my projects below.</p>
+        </div>
+      </section>
+
+      <section id="references" class="section text-center">
+        <div class="container">
+          <h2>References</h2>
+          <p>See what others say about my work.</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="loading.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

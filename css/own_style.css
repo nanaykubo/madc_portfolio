@@ -1,0 +1,433 @@
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #5d5242; /* Border color */
+  border-top: 8px solid #e9cda5; /* Highlight color */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.copyright {
+  font-family: "Press Start 2P", cursive;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: black;
+}
+
+::selection {
+  background: transparent; /* No highlight color */
+  color: inherit; /* Inherit text color */
+}
+
+body {
+  background-color: transparent;
+  cursor: url("cursor.png"), auto;
+}
+
+.connect_img {
+  width: 100%;
+}
+
+/* Page Styling */
+html {
+  cursor: url("cursor.png"), auto;
+  --s: 85px;
+  --g: conic-gradient(at 90% 40%, #0000 75%, #a39073 0);
+
+  background: var(--g), var(--g) var(--s) var(--s) #e9cda5;
+  background-size: calc(2 * var(--s)) calc(2 * var(--s));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Tahoma, sans-serif;
+  caret-color: transparent;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-box {
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+  color: #e9cda5;
+  background: #171410;
+  padding: 19px 40px;
+  border: 4px solid #5d5242;
+  border-radius: 15px;
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); */
+  max-width: 311px;
+}
+
+.badge-box {
+  color: #e9cda5;
+  background: #171410;
+  padding: 10px 15px;
+  border: 4px solid #5d5242;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.avatar-box {
+  font-family: "Press Start 2P", cursive;
+  width: 300px;
+  height: 325px;
+  color: #2b2b2b;
+  border: 6px solid #171410;
+  border-radius: 15px;
+  box-shadow: 0 0 0 4px #a39073, 0 0 0 8px #5d5242,
+    8px 8px 0 0 rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  outline: none;
+  background: #171410;
+}
+
+.avatar-box img {
+  border: 4px solid #5d5242;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.bio-box {
+  font-family: "Press Start 2P", cursive;
+  width: 800px;
+  height: 450px;
+  background: #e9cda5;
+  color: #2b2b2b;
+  border: 6px solid #171410;
+  border-radius: 15px;
+  box-shadow: 0 0 0 4px #a39073, 0 0 0 8px #5d5242,
+    8px 8px 0 0 rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  outline: none;
+
+  /* 👇 Keep the box size fixed */
+  overflow: hidden; /* Hide overflowing content */
+  box-sizing: border-box; /* Include padding and border in the size */
+  max-width: 450px; /* Prevent growing */
+  max-height: 450px; /* Prevent expanding */
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  color: #5d5242;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 50px;
+  height: auto;
+  cursor: url("s_cursor.png"), auto;
+}
+
+.arrow:hover {
+  transform: scale(1.1); /* Slight hover effect */
+  cursor: url("s_cursor.png"), auto;
+}
+
+/* Pixel Button Styling */
+.button-container {
+  position: absolute;
+  left: -72px;
+  top: 63%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: -1;
+}
+
+.pixel-button {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 67px;
+  background: #d7b88a;
+  border: 4px solid #171410;
+  box-shadow: 4px 4px 0 #5d5242, 8px 8px 0 #171410;
+  color: #171410;
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.2s;
+  cursor: url("s_cursor.png"), auto;
+  position: relative;
+  text-align: center;
+  outline: none;
+}
+
+.pixel-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.pixel-button::before,
+.pixel-button::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #171410;
+}
+
+.pixel-button::before {
+  top: 6px;
+  left: 6px;
+}
+
+.pixel-button::after {
+  bottom: 6px;
+  right: 6px;
+}
+
+.pixel-button:hover {
+  background: #5d5242;
+  box-shadow: 2px 2px 0 #171410, 4px 4px 0 #5d5242;
+  transform: translate(-2px, -2px);
+}
+
+.pixel-button:active {
+  background: #171410;
+  color: #e9cda5;
+  box-shadow: 0 0 0 #5d5242, 0 0 0 #171410;
+  transform: translate(4px, 4px);
+}
+
+ul {
+  list-style-position: inside; /* Keeps bullet points close to text */
+  padding-left: 0;
+  margin-left: 0;
+  column-gap: 30px; /* Space between columns */
+}
+
+li {
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-align: left;
+  break-inside: avoid; /* Prevents list items from breaking */
+}
+
+/* Automatically apply multi-column layout if there are more than 6 items */
+ul.too-many-items {
+  column-count: 2;
+  font-size: 15px;
+}
+
+li.too-many-items {
+  font-size: 15px;
+}
+
+a {
+  outline: none; /* Removes the focus outline */
+}
+
+.retro-card {
+  background-color: #a39073;
+  color: #d8f3dc;
+  border: 4px solid #588157;
+  width: 350px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.profile-img {
+  border: 4px solid #588157;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 16px;
+  color: #e9cda5;
+}
+
+.title {
+  font-size: 16px;
+  color: #998d6f;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  .profile-img {
+    border: 4px solid #588157;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .avatar-box {
+    font-family: "Press Start 2P", cursive;
+    width: 160px;
+    height: 220px;
+    color: #2b2b2b;
+    border: 6px solid #171410;
+    border-radius: 15px;
+    box-shadow: 0 0 0 4px #a39073, 0 0 0 8px #5d5242,
+      8px 8px 0 0 rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    outline: none;
+    background: #171410;
+  }
+
+  .welcome-box {
+    font-family: "Press Start 2P", cursive;
+    font-size: 9px;
+    color: #e9cda5;
+    background: #171410;
+    padding: 19px 11px;
+    border: 4px solid #5d5242;
+    border-radius: 15px;
+    margin-top: 20px;
+    max-width: 165px;
+    margin-bottom: 15px !important;
+  }
+
+  .pixel-button {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    height: 40px;
+    background: #d7b88a;
+    border: 4px solid #171410;
+    box-shadow: 4px 4px 0 #5d5242, 8px 8px 0 #171410;
+    color: #171410;
+    font-family: "VT323", monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: url(s_cursor.png), auto;
+    position: relative;
+    text-align: center;
+    outline: none;
+  }
+
+  .button-container {
+    position: absolute;
+    left: 60px;
+    top: 68%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: -1;
+  }
+
+  .name {
+    font-size: 9px;
+  }
+
+  .title {
+    font-size: 9px;
+  }
+
+  .pixel-button img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .button-container {
+    position: absolute;
+    left: -25px;
+    top: 68%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: -1;
+  }
+
+  .bio-box {
+    font-family: "Press Start 2P", cursive;
+    height: 450px;
+    background: #e9cda5;
+    color: #2b2b2b;
+    border: 6px solid #171410;
+    border-radius: 15px;
+    box-shadow: 0 0 0 4px #a39073, 0 0 0 8px #5d5242,
+      8px 8px 0 0 rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    outline: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 300px;
+    max-height: 350px;
+    margin-top: 30px;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 11px !important;
+  }
+
+  .badge-box {
+    font-size: 9px !important;
+  }
+
+  .copyright {
+    font-size: 6px;
+  }
+
+  .connect_img {
+    width: 70%;
+  }
+}
