@@ -24,17 +24,17 @@ jobs:
         run: |
           aws s3 sync . s3://madcportfoliobucket --delete
 
-      - name: Get the latest style.css version ID
+  - name: Get the latest css/style.css version ID
         id: get-style-version
         run: |
           VERSION_ID=$(aws s3api list-object-versions \
             --bucket madcportfoliobucket \
-            --prefix style.css \
+            --prefix css/style.css \
             --query 'Versions[0].VersionId' \
             --output text)
           echo "VERSION_ID=${VERSION_ID}" >> $GITHUB_ENV
 
-      - name: Update HTML with style.css version ID
+      - name: Update HTML with css/style.css version ID
         run: |
-          sed -i "s|style.css.*|style.css?versionId=$VERSION_ID|" portfolio.html
+          sed -i "s|css/style.css.*|css/style.css?versionId=$VERSION_ID|" portfolio.html
           aws s3 cp portfolio.html s3://madcportfoliobucket/portfolio.html
