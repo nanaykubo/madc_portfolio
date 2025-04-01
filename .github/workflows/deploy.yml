@@ -20,6 +20,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy to S3
+      - name: Deploy to S3 with versioning
         run: |
           aws s3 sync . s3://madcportfoliobucket --delete
+
+      - name: Get the latest style.css version ID
+        id: get-style-version
+        run: |
+          VERSION_ID=$(aws s3api list-object-versions \
+            --bucket madcportfoliobucket \
+            --prefix style.css \
+            --query 'Versions[0].VersionId' \
+            --output text)
+          echo "VERSION_ID=${VERSION_ID}" >> $GITHUB_ENV
+
+      - name: Update HTML with style.css version ID
+        run: |
+          sed -i "s|style.css.*|style.css?versionId=$VERSION_ID|" portfolio.html
+          aws s3 cp portfolio.html s3://madcportfoliobucket/portfolio.html
