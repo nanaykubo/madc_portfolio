@@ -30,15 +30,11 @@ jobs:
           VERSION_ID=$(aws s3api list-object-versions \
             --bucket madcportfoliobucket \
             --prefix css/style.css \
-            --query 'sort_by(Versions, &LastModified)[-1].VersionId' \
+            --query 'Versions[0].VersionId' \
             --output text)
           echo "VERSION_ID=${VERSION_ID}" >> $GITHUB_ENV
 
-      - name: Verify Version ID Output
-        run: |
-          echo "Retrieved Version ID: $VERSION_ID"
-
       - name: Update HTML with css/style.css version ID
         run: |
-          sed -i 's|css/style.css[^"]*|css/style.css?versionId='"$VERSION_ID"'"|' portfolio.html
+          sed -i "s|css/style.css.*|css/style.css?versionId=$VERSION_ID|" portfolio.html
           aws s3 cp portfolio.html s3://madcportfoliobucket/portfolio.html
