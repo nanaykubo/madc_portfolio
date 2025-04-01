@@ -450,4 +450,8 @@ a {
   .arrow {
     width: 40px;
   }
+
+  p {
+    margin-bottom: 8px;
+  }
 }
