@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume — MADC</title>
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --accent: #5d5242;
+        --muted: #6c757d;
+      }
+
+      body {
+        font-family: Tahoma, Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        line-height: 1.5;
+        color: #212529;
+      }
+
+      .resume {
+        max-width: 900px;
+        margin: 32px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 30px rgba(17, 17, 17, 0.06);
+        overflow: hidden;
+      }
+
+      .sidebar {
+        background: #f1efe9;
+        padding: 28px;
+      }
+
+      .avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        margin: 0 auto 1rem auto;
+      }
+
+      .name {
+        font-weight: 700;
+        font-size: 1.35rem;
+        color: var(--accent);
+        margin-top: 0.75rem;
+      }
+
+      .role {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact small {
+        display: block;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+
+      .skill-badge {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.5rem;
+        border-radius: 0.5rem;
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        margin: 0.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .skill-badge img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 1.25rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 8px;
+        width: 3px;
+        height: 100%;
+        background: #e9ecef;
+        border-radius: 2px;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding: 12px 0 12px 28px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 18px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border: 3px solid var(--accent);
+        border-radius: 50%;
+      }
+
+      /* Section headings */
+      h5,
+      h6 {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      @media print {
+        @page {
+          margin: none; /* minimal margin */
+          size: letter;
+        }
+
+        * {
+          box-sizing: border-box;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        body {
+          background: white;
+          color: #212529;
+          line-height: 1.25;
+          font-size: 10pt;
+          margin: 0;
+          padding: 0;
+        }
+
+        .resume {
+          box-shadow: none;
+          border: none;
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
+        }
+
+        .row.g-0 {
+          display: flex;
+          flex-wrap: nowrap;
+          margin: 0;
+          gap: 0;
+        }
+
+        aside.sidebar {
+          width: 30%;
+          flex-shrink: 0;
+          overflow: visible;
+          background:  #f1efe9;
+          padding: 0.6rem 0.7rem; /* increased from 0.4rem 0.5rem */
+        }
+
+        main {
+          width: 68%;
+          padding: 0.4rem 0.5rem;
+          flex-shrink: 1;
+          font-size: 10pt;
+          line-height: 1.2;
+        }
+
+        .avatar {
+          width: 85px;
+          height: 85px;
+          margin-bottom: 0.3rem;
+          border-width: 2px;
+        }
+
+        .text-center {
+          margin-bottom: 0.3rem;
+        }
+
+        .contact {
+          margin-top: 0.2rem;
+        }
+        .contact h6 {
+          font-size: 9.5pt;
+          margin-bottom: 0.2rem;
+        }
+        .contact div,
+        .contact small {
+          font-size: 9pt;
+          margin-bottom: 0.1rem;
+          line-height: 1.2;
+        }
+
+        hr {
+          margin: 0.25rem 0;
+        }
+
+        .sidebar h6 {
+          font-size: 9.5pt;
+          margin-bottom: 0.4rem; /* increased spacing */
+        }
+
+        .sidebar strong {
+          font-size: 9pt;
+          margin-bottom: 0.2rem; /* increased spacing */
+        }
+
+        .sidebar .d-flex {
+          gap: 0.25rem; /* slightly more space between flex items */
+          margin-top: 0.2rem; /* slightly more spacing from previous element */
+        }
+
+        .skill-badge {
+          font-size: 8pt;
+          padding: 0.38rem 0.4rem; /* slightly larger padding */
+          margin: 0.07rem;
+          flex: 0 0 48%;
+          line-height: 1.5;
+        }
+
+        main h2 {
+          font-size: 16pt;
+          margin-bottom: 0.2rem;
+        }
+        main h5 {
+          font-size: 12pt;
+          margin-bottom: 0.15rem;
+          margin-top: 0.25rem;
+        }
+        main h6 {
+          font-size: 10pt;
+          margin-bottom: 0.1rem;
+          line-height: 1.15;
+        }
+
+        .mb-4,
+        .mb-3,
+        .mb-2,
+        .mb-1 {
+          margin-bottom: 0.15rem !important;
+        }
+        .mt-2,
+        .mt-3 {
+          margin-top: 0.1rem !important;
+        }
+
+        .profile-summary {
+          font-size: 9.5pt;
+          line-height: 1.2;
+          margin-bottom: 0.15rem;
+        }
+
+        .timeline {
+          padding-left: 0.9rem;
+        }
+        .timeline::before {
+          left: 4.5px;
+          width: 2px;
+        }
+        .timeline-item {
+          padding: 0.07rem 0 0.12rem 0.95rem;
+          margin-bottom: 0.15rem;
+        }
+        .timeline-item::before {
+          width: 9px;
+          height: 9px;
+          border-width: 2px;
+          left: -4.5px;
+          top: 0.18rem;
+        }
+        .timeline-item small,
+        .timeline-item .text-muted {
+          font-size: 9pt;
+        }
+        .timeline-item ul {
+          margin: 0.08rem 0 0.08rem 0.55rem;
+          padding-left: 0.55rem;
+          font-size: 9pt;
+          line-height: 1.15;
+        }
+        .timeline-item li {
+          margin-bottom: 0.07rem;
+        }
+
+        section .row,
+        section .col-12 {
+          margin-bottom: 0.12rem !important;
+          page-break-inside: avoid;
+        }
+        section .col-12 strong {
+          font-size: 10.5pt;
+        }
+        section .col-12 .text-muted.small {
+          font-size: 8.8pt;
+          line-height: 1.15;
+          margin-bottom: 0;
+        }
+        section .col-12 p {
+          font-size: 9.5pt;
+          line-height: 1.2;
+          margin: 0;
+        }
+        section .col-12 b {
+          font-weight: 600;
+        }
+
+        section ul {
+          margin: 0.08rem 0 0.08rem 0.8rem;
+          padding-left: 0.55rem;
+        }
+        section ul li {
+          font-size: 9.2pt;
+          margin-bottom: 0.07rem;
+          line-height: 1.15;
+        }
+        section ul li strong {
+          font-size: 9.7pt;
+        }
+
+        .no-print,
+        .btn,
+        button,
+        .d-flex.justify-content-between.small.text-muted {
+          display: none !important;
+        }
+        .timeline-item,
+        section .col-12,
+        .contact div {
+          page-break-inside: avoid;
+        }
+        .section-break {
+          page-break-before: always;
+        }
+        .p-4 {
+          padding: 0.4rem 0.5rem !important;
+        }
+        .row.g-3,
+        .g-0 {
+          gap: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume">
+      <div class="row g-0">
+        <!-- SIDEBAR -->
+        <aside class="col-md-4 sidebar">
+          <div class="text-center">
+            <img src="images\ME.jpg" alt="photo" class="avatar mb-3" />
+          </div>
+
+          <div class="contact mt-3">
+            <h6 class="mb-2">Contact</h6>
+            <div>
+              <small>Email</small>
+              <div>angelskieeee@gmail.com</div>
+            </div>
+            <div class="mt-2">
+              <small>Phone</small>
+              <div>+63 936 478 9525</div>
+            </div>
+            <div class="mt-2">
+              <small>Location</small>
+              <div>Manila, Philippines</div>
+            </div>
+            <div class="mt-2">
+              <small>Website</small>
+              <div>s3.madcportfolio.site</div>
+            </div>
+            <div class="mt-2">
+              <small>LinkedIn</small>
+              <div>linkedin.com/in/madc-portfolio</div>
+            </div>
+            <div class="mt-2">
+              <small>GitHub</small>
+              <div>github.com/nanaykubo</div>
+            </div>
+          </div>
+
+          <hr />
+          <div>
+            <h6 class="mb-3">Skills</h6>
+
+            <!-- Programming Languages -->
+            <div class="mb-3">
+              <strong class="text-secondary">Programming Languages</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"><img src="logo\php.svg" />PHP</span>
+                <span class="skill-badge"><img src="logo\c.svg" />C#</span>
+                <span class="skill-badge"><img src="logo\java.svg" />Java</span>
+                <span class="skill-badge"
+                  ><img src="logo\javascript.svg" />JavaScript</span
+                >
+                <span class="skill-badge"><img src="logo\dart.svg" />Dart</span>
+              </div>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="mb-3">
+              <strong class="text-secondary">Mobile Development</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"
+                  ><img src="logo\flutter.svg" />Flutter</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\hive.jfif" />Hive</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\cordova.svg" />Cordova JS</span
+                >
+              </div>
+            </div>
+
+            <!-- Databases & Backend -->
+            <div class="mb-3">
+              <strong class="text-secondary">Databases & Backend</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"><img src="logo\wamp.png" />WAMP</span>
+                <span class="skill-badge"><img src="logo\xamp.png" />XAMP</span>
+                <span class="skill-badge"
+                  ><img src="logo\mysql.svg" />MySQL</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\mssql.png" />MSSQL</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\mongodb.svg" />MongoDB</span
+                >
+              </div>
+            </div>
+
+            <!-- Framework -->
+            <div class="mb-3">
+              <strong class="text-secondary">Framework</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"
+                  ><img src="logo\codeigniter.svg" />CodeIgniter</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\express.svg" />Express.js</span
+                >
+              </div>
+            </div>
+
+            <!-- Web & Frontend -->
+            <div class="mb-3">
+              <strong class="text-secondary">Web & Frontend</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"><img src="logo\css.svg" />CSS</span>
+                <span class="skill-badge"
+                  ><img src="logo\bootstrap.svg" />Bootstrap</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\jquery.svg" />jQuery</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\wordpress.svg" />WordPress</span
+                >
+              </div>
+            </div>
+
+            <!-- AWS & DevOps -->
+            <div class="mb-3">
+              <strong class="text-secondary">AWS & DevOps</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"><img src="logo\s3.svg" />S3</span>
+                <span class="skill-badge"
+                  ><img src="logo\cloudfront.svg" />CloudFront</span
+                >
+                <span class="skill-badge"
+                  ><img src="logo\route53.svg" />Route53</span
+                >
+                <span class="skill-badge"><img src="logo/acm.svg" />ACM</span>
+                <span class="skill-badge"><img src="logo\sqs.svg" />SQS</span>
+                <span class="skill-badge"><img src="logo\ecr.jfif" />ECR</span>
+                <span class="skill-badge"><img src="logo\ecs.png" />ECS</span>
+                <span class="skill-badge"
+                  ><img src="logo\fargate.webp" />Fargate</span
+                >
+                <span class="skill-badge"><img src="logo\elb.webp" />ELB</span>
+                <span class="skill-badge"><img src="logo\ec2.svg" />EC2</span>
+                <span class="skill-badge"
+                  ><img src="logo\cloudwatch.svg" />CloudWatch</span
+                >
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="mb-3">
+              <strong class="text-secondary">Tools</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+                  />Atlassian Jira</span
+                >
+                <span class="skill-badge"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg"
+                  />Bitbucket</span
+                >
+                <span class="skill-badge"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  />Docker</span
+                >
+                <span class="skill-badge"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  />GitHub</span
+                >
+              </div>
+            </div>
+
+            <!-- Other -->
+            <div class="mb-3">
+              <strong class="text-secondary">Other</strong>
+              <div class="d-flex flex-wrap mt-2">
+                <span class="skill-badge"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                  />Linux</span
+                >
+                <span class="skill-badge"
+                  ><img
+                    src="https://www.svgrepo.com/show/306500/openai.svg"
+                    style="width: 18px; height: 18px"
+                  />OpenAI</span
+                >
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="col-md-8 p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h1 class="mb-1">Ma Angelica D. Chua</h1>
+              <h4 class="text-muted">Application Development Manager</h4>
+            </div>
+
+            <!-- #FOR UPDATING RESUME -->
+            <!-- <a href="#" class="btn btn-sm btn-outline-primary me-2 no-print" onclick="printPage()"> Download Resume </a> -->
+
+            <a href="pdf\Resume — MADC.pdf" target="_blank"  class="btn btn-sm btn-outline-primary me-2 no-print" download>
+              Download Resume
+            </a>
+          </div>
+
+          <section class="mb-4">
+            <h5>Profile Summary</h5>
+            <p class="profile-summary text-muted">
+              Application Development Manager with 5 years of experience
+              building web and mobile applications using PHP, C#, Java,
+              JavaScript, Dart, and Flutter. Skilled in backend, frontend, and
+              AWS/DevOps technologies, passionate about creating scalable and
+              maintainable solutions.
+            </p>
+          </section>
+
+          <section class="mb-4">
+            <h5 class="mb-3">Experience</h5>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h6 class="mb-1">
+                  Application Dev Manager
+                  <small class="text-muted"
+                    >— Electronic Transfer & Advance Processing, Inc</small
+                  >
+                </h6>
+                <small class="text-muted">June 2024 - Present</small>
+                <ul class="mb-2 mt-2">
+                  <li>Agile/Scrum Methodology</li>
+                  <li>API Integration</li>
+                  <li>AWS S3</li>
+                  <li>AWS SQS</li>
+                  <li>AWS Cloudwatch</li>
+                  <li>Bitbucket</li>
+                  <li>CI/CD Testing</li>
+                  <li>CodeIgniter</li>
+                  <li>Confluent Kafka</li>
+                  <li>DFS Techfile Creation</li>
+                  <li>Docker</li>
+                  <li>Jira Atlassian</li>
+                  <li>Kiosk UI/UX</li>
+                  <li>Linux</li>
+                  <li>MYSQL/XAMPP</li>
+                  <li>PHP</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h6 class="mb-1">
+                  Senior Software Engineer
+                  <small class="text-muted"
+                    >— Electronic Transfer & Advance Processing, Inc</small
+                  >
+                </h6>
+                <small class="text-muted">July 2021 - June 2024</small>
+              </div>
+
+              <div class="timeline-item">
+                <h6 class="mb-1">
+                  Software Engineer
+                  <small class="text-muted"
+                    >— Electronic Transfer & Advance Processing, Inc</small
+                  >
+                </h6>
+                <small class="text-muted">Sept 2020 - July 2021</small>
+              </div>
+
+              <div class="timeline-item">
+                <h6 class="mb-1">
+                  Junior Full Stack Developer
+                  <small class="text-muted"
+                    >— Mets Innovative Solutions Inc</small
+                  >
+                </h6>
+                <small class="text-muted">June 2019 - Sept 2020</small>
+                <ul class="mb-0 mt-2">
+                  <li>Dev Express, Entity, &amp; Class</li>
+                  <li>C# Programming</li>
+                  <li>Node JS</li>
+                  <li>Cordova JS</li>
+                  <li>MS SQL</li>
+                  <li>Web Dashboards</li>
+                  <li>Technical Documentation</li>
+                  <li>Help File</li>
+                </ul>
+              </div>
+
+              <div class="timeline-item">
+                <h6 class="mb-1">
+                  Payreto Services Inc
+                  <small class="text-muted">— Software Developer Intern</small>
+                </h6>
+                <small class="text-muted">June 2018 - Nov 2018</small>
+                <ul class="mb-0 mt-2">
+                  <li>Flow Charts</li>
+                  <li>QA Activity</li>
+                  <li>Github/Bitbucket</li>
+                  <li>Agile/Scrum Methodology</li>
+                  <li>C# Programming</li>
+                  <li>MS SQL</li>
+                  <li>Jira Atlassian</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-4">
+            <h5 class="mb-3">Education</h5>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h6 class="mb-1">
+                  Bachelor of Science in Information Systems <br />
+                  <small class="text-muted">
+                    Technological University of the Philippines</small
+                  >
+                </h6>
+                <small class="text-muted">2015–2019</small>
+                <ul class="mb-2 mt-2">
+                  <li>PHP</li>
+                  <li>C++</li>
+                  <li>C#</li>
+                  <li>Java</li>
+                  <li>Code Igniter</li>
+                  <li>Networking</li>
+                  <li>Photoshop</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h5 class="mb-3">Projects</h5>
+
+            <div class="row g-3">
+              <div class="col-12 mb-3">
+                <strong>Project Jarvis</strong>
+                <div class="text-muted small">July 2025</div>
+                <div class="text-muted small">
+                  <b>Skills:</b> OpenAI · Amazon ECS · Docker · Python · FastAPI
+                  · Uvicorn
+                </div>
+                <p class="mb-0 text-muted">
+                  Built a Python tool to process bank deposit slips using OpenAI
+                  OCR, export summaries as CSV, and deployed it on AWS ECR/ECS
+                  Fargate. Gained hands-on experience with Python, OCR, and
+                  cloud deployment.
+                </p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <strong>NutriQuest</strong>
+                <div class="text-muted small">Apr 2025 - May 2025</div>
+                <div class="text-muted small">
+                  <b>Skills:</b> Flutter · Dart · AWS S3 · Hive · Cloud
+                  Firestore · Firebase · OpenAI · NodeJS
+                </div>
+                <p class="mb-0 text-muted">
+                  A mobile app that generates weekly meal plans for your kids
+                  based on ingredients at home, with fun food creative ideas,
+                  stories, and games to enjoy together.
+                </p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <strong
+                  >Office of the Special Envoy on Transnational Crime
+                  Website</strong
+                >
+                <div class="text-muted small">Sep 2024 - Present</div>
+                <div class="text-muted small">
+                  <b>Skills:</b> Skills: WordPress · WAMP · Amazon EC2 · Amazon
+                  Route 53 · AWS Certificate Manager (ACM) · AWS Load Balancer
+                </div>
+                <p class="mb-0 text-muted">
+                  Developed a responsive and user-friendly government website
+                  aligned with GWTD standards, featuring fast loading times,
+                  intuitive navigation, consistent design, and clear
+                  presentation of information.
+                </p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <strong>DEV Portfolio</strong>
+                <div class="text-muted small">Sep 2024 - Present</div>
+                <div class="text-muted small">
+                  <b>Skills:</b> CSS · Bootstrap · jQuery · JavaScript · Amazon
+                  S3 · GitHub · Amazon CloudFront · Amazon Route 53
+                </div>
+                <p class="mb-0 text-muted">
+                  Developed a responsive and user-friendly government website
+                  aligned with GWTD standards, featuring fast loading times,
+                  intuitive navigation, consistent design, and clear
+                  presentation of information.
+                </p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <strong>PhilBarPro Inventory Management System</strong>
+                <div class="text-muted small">Jan 2024 - Feb 2024</div>
+                <div class="text-muted small"><b>Skills:</b> C# · MSSQL</div>
+                <p class="mb-0 text-muted">
+                  Developed an inventory and order management system for Phil
+                  Barpro, enabling product, customer, and order management,
+                  automated stock updates, price list emails, and invoice
+                  generation.
+                </p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <strong>LogiTrack (POC)</strong>
+                <div class="text-muted small">November 2023 - Jan 2024</div>
+                <div class="text-muted small">
+                  <b>Skills:</b> Flutter · Dart · Firebase · Google Maps API
+                </div>
+                <p class="mb-0 text-muted">
+                  Developed a Logistics Platform for Delivery Driver Tracking
+                  Enabled real-time GPS tracking, route monitoring, and
+                  notifications for delays or unscheduled stops to ensure timely
+                  deliveries.
+                </p>
+              </div>
+
+              <div class="col-12 mb-3">
+                <strong>Blue Jade Clinic Medical System</strong>
+                <div class="text-muted small">Apr 2020 - Jun 2020</div>
+                <div class="text-muted small">
+                  <b>Skills:</b> Java · OpenCV · WAMP
+                </div>
+                <p class="mb-0 text-muted">
+                  Developed a Medical Facility Management System for Blue Jade
+                  Clinic, streamlining patient check-ins, doctor consultations,
+                  lab test management, and prescription issuance.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h5 class="mb-3">References</h5>
+
+            <ul>
+              <li class="mb-2">
+                <strong>Daren Dizon</strong> – Senior Software Engineer,
+                Accenture <br />
+                Phone: +63 912 345 6789
+              </li>
+              <li class="mb-2">
+                <strong>Henry Macaraeg</strong> – Payment Solution Specialist<br />
+                Phone: +63 998 989 3009
+              </li>
+              <li class="mb-2">
+                <strong>Martin Sandique</strong> – Customer Success Manager,
+                Clickup<br />
+                Phone: +63 926 751 5425
+              </li>
+            </ul>
+          </section>
+
+          <hr class="no-print" />
+
+          <div class="d-flex justify-content-between small text-muted no-print">
+            <div>Last updated: <strong>Nov 9, 2025</strong></div>
+            <div>&copy; MADC 2025</div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function printPage() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

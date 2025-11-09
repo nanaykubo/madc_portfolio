@@ -18,8 +18,10 @@
     />
 
     <link rel="stylesheet" href="bootstrap\bootstrap.min.css" />
-    <link rel="stylesheet" href="css\style.css?versionId=3S6tRZ7w7Yw9K1zO9K1v">
-
+    <link
+      rel="stylesheet"
+      href="css\style.css?versionId=3S6tRZ7w7Yw9K1zO9K1v"
+    />
   </head>
 
   <body>
@@ -311,21 +313,181 @@
       </div>
 
       <div id="bio-box-3" class="bio-box" style="display: none">
-        <h1>PROJECTS</h1>
-        <h4>Portfolio</h4>
-        <p>To be continued ...</p>
-        <div class="arrow"></div>
+        <h1 class="portfolio-title">PROJECTS</h1>
+
+        <div id="portfolio-1">
+          <h4 class="portfolio-title-2">Blue Jade Clinic Medical System</h4>
+
+          <p class="portfolio-text">
+            Developed a Medical Facility Management System for Blue Jade Clinic,
+            streamlining patient check-ins, doctor consultations, lab test
+            management, and prescription issuance.
+          </p>
+
+          <p class="text-muted portfolio-skills">Skills: Java, OpenCV, WAMP</p>
+          <span class="badge-box">Apr 2020 - Jun 2020</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-2','proj')"
+          />
+        </div>
+
+        <div id="portfolio-2" style="display: none">
+          <h4 class="portfolio-title-2">LogiTrack (POC)</h4>
+
+          <p class="portfolio-text">
+            Developed a Logistics Platform for Delivery Driver Tracking Enabled
+            real-time GPS tracking, route monitoring, and notifications for
+            delays or unscheduled stops to ensure timely deliveries.
+          </p>
+
+          <p class="text-muted portfolio-skills">
+            Skills: Flutter · Firebase (Push Notif) · Dart · Google Maps API
+          </p>
+          <span class="badge-box">November 2023 - Jan 2024</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-3','proj')"
+          />
+        </div>
+
+        <div id="portfolio-3" style="display: none">
+          <h4 class="portfolio-title-2">PhilBarPro IMS</h4>
+
+          <p class="portfolio-text">
+            Developed an inventory and order management system for Phil Barpro,
+            enabling product, customer, and order management, automated stock
+            updates, price list emails, and invoice generation.
+          </p>
+
+          <p class="text-muted portfolio-skills">Skills: C# · MSSQL</p>
+          <span class="badge-box">Jan 2024 - Feb 2024</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-4','proj')"
+          />
+        </div>
+
+        <div id="portfolio-4" style="display: none">
+          <h4 class="portfolio-title-2">DEV Portfolio</h4>
+
+          <p class="portfolio-text">My Personal Portfolio</p>
+
+          <p class="text-muted portfolio-skills">
+            Skills: CSS · Bootstrap · jQuery · JavaScript · Amazon S3 · GitHub ·
+            Amazon CloudFront · Amazon Route 53
+          </p>
+          <span class="badge-box">Sep 2024 - Present</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-5','proj')"
+          />
+        </div>
+
+        <div id="portfolio-5" style="display: none">
+          <h4 class="portfolio-title-2">OSETC Gov Website</h4>
+
+          <p class="portfolio-text">
+            Developed a responsive and user-friendly government website aligned
+            with GWTD standards, featuring fast loading times, intuitive
+            navigation, consistent design, and clear presentation of
+            information.
+          </p>
+
+          <p class="text-muted portfolio-skills">
+            Skills: WordPress · WAMP · Amazon EC2 · Amazon Route 53 · AWS
+            Certificate Manager (ACM) · AWS Load Balancer
+          </p>
+          <span class="badge-box">Sep 2024 - Present</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-6','proj')"
+          />
+        </div>
+
+        <div id="portfolio-6" style="display: none">
+          <h4 class="portfolio-title-2">NutriQuest</h4>
+
+          <p class="portfolio-text">
+            A mobile app that generates weekly meal plans for your kids based on
+            ingredients at home, with fun food creative ideas, stories, and
+            games to enjoy together.
+          </p>
+
+          <p class="text-muted portfolio-skills">
+            Skills: Flutter · Dart · AWS S3 · Hive · Cloud Firestore · Firebase
+            · OpenAI · NodeJS
+          </p>
+          <span class="badge-box">Apr 2025 - May 2025</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-7','proj')"
+          />
+        </div>
+
+        <div id="portfolio-7" style="display: none">
+          <h4 class="portfolio-title-2">Project Jarvis</h4>
+
+          <p class="portfolio-text">
+            Built a Python tool to process bank deposit slips using OpenAI OCR,
+            export summaries as CSV, and deployed it on AWS ECR/ECS Fargate.
+            Gained hands-on experience with Python, OCR, and cloud deployment.
+          </p>
+
+          <p class="text-muted portfolio-skills">
+            Skills: OpenAI · Amazon ECS · Docker · Python · FastAPI · Uvicorn
+          </p>
+          <span class="badge-box">July 2025</span>
+
+          <br />
+          <img
+            src="images\icons\next.png"
+            alt="Arrow"
+            class="arrow"
+            onclick="toggleContent('portfolio-1','proj')"
+          />
+        </div>
       </div>
 
       <div id="bio-box-4" class="bio-box" style="display: none">
-        <h1>CONNECT</h1>
-        <h4>Email</h4>
-        <p>angelskieeee@gmail.com</p>
-        <h4>Contact No</h4>
-        <p>+(63) 936 478 9525</p>
-        <h4 class="">Links</h4>
+        <h1 class="connect_text">CONNECT</h1>
+        <h5 class="connect_text">Email</h5>
+        <p class="connect_text">angelskieeee@gmail.com</p>
+        <h5 class="connect_text">Resume</h5>
+        <p class="connect_text">
+          <a style="padding: 0px !important" href="resume.html" target="_blank"
+            >Click Here</a
+          >
+        </p>
+        <h5 class="connect_text">Contact No</h5>
+        <p class="connect_text">+(63) 936 478 9525</p>
+        <h5 class="connect_text">Links</h5>
         <div class="container text-center">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center connect_text">
             <div class="col-6 col-sm-6 d-flex justify-content-center">
               <a
                 href="https://www.linkedin.com/in/angelica-chua-28091b242/"

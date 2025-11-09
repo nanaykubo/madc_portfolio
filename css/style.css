@@ -10,6 +10,18 @@
   align-items: center;
 }
 
+.portfolio-title-2 {
+  margin-bottom: 10px;
+}
+
+.portfolio-text {
+  font-size: 11px;
+}
+
+.portfolio-skills {
+  font-size: 10px;
+}
+
 /* Spinner animation */
 .spinner {
   width: 80px;
@@ -296,8 +308,25 @@ a {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+
+  .connect_text{
+    margin: 5px!important;
+  }
+
   .header {
     margin-top: 0 !important; /* Remove mt-4 */
+  }
+
+  .portfolio-title-2 {
+    margin-bottom: 2px;
+  }
+
+  .portfolio-text {
+    font-size: 8px;
+  }
+
+  .portfolio-skills {
+    font-size: 8px;
   }
 
   .container {
@@ -306,6 +335,10 @@ a {
 
   html {
     min-height: 85vh;
+  }
+
+  .portfolio-title {
+    margin-bottom: 4px !important;
   }
 
   .profile-img {
@@ -435,7 +468,7 @@ a {
   }
 
   .badge-box {
-    font-size: 9px !important;
+    font-size: 8px !important;
   }
 
   .copyright {

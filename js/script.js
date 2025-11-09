@@ -62,6 +62,7 @@ function playSound2() {
 }
 
 function showBio(id, content) {
+
     // Hide all bio boxes
     const bios = document.querySelectorAll(".bio-box");
     bios.forEach((bio) => (bio.style.display = "none"));
@@ -80,6 +81,7 @@ function showBio(id, content) {
             });
 
         $("#bio-content-1").css("display", "block");
+
     } else if (content == "skill") {
         // // Hide all sections
         document.querySelectorAll('[id^="skills-"]').forEach(function (el) {
@@ -87,7 +89,17 @@ function showBio(id, content) {
         });
 
         $("#skills-1").css("display", "block");
+
+    } else if (content == "proj") {
+
+        // // Hide all sections
+        document.querySelectorAll('[id^="portfolio-"]').forEach(function (el) {
+            el.style.display = "none";
+        });
+
+        $("#portfolio-1").css("display", "block");
     }
+
 
     // Play sound effect
     playSound();
@@ -109,6 +121,11 @@ function toggleContent(divId, content) {
         document.querySelectorAll('[id^="skills-"]').forEach(function (el) {
             el.style.display = "none";
         });
+    } else if (content == "proj") {
+        // // Hide all sections
+        document.querySelectorAll('[id^="portfolio-"]').forEach(function (el) {
+            el.style.display = "none";
+        });
     }
 
     // Toggle the clicked section
@@ -119,3 +136,5 @@ function toggleContent(divId, content) {
     // Play second sound when the arrow is clicked
     playSound2();
 }
+
+
